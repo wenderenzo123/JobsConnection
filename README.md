@@ -1,2 +1,2 @@
 # JobsConnection
-Sstema de contratação para jovens universitários
+Sistema de contratação para jovens universitários
