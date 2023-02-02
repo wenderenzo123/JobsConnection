@@ -1,2 +1,2 @@
 # JobsConnection
-Sistema de contratação para jovens universitários
+Este projeto é um sistema de contratação para jovens universitários. Ele visa conectar empresas com estudantes universitários em busca de oportunidades de emprego e estágios. O sistema inclui uma plataforma de busca, onde empresas podem pesquisar as vagas que a mesma inseriu e poder visualizar quem foram os candidatos que se inscreveram para a vaga. Os jovens universitários podem se inscrever em oportunidades de emprego relevantes. Além disso, o sistema fornece recursos de gerenciamento de processos de contratação. O objetivo é facilitar a transição dos jovens universitários para o mercado de trabalho e ajudar as empresas a encontrar talentos inovadores.
