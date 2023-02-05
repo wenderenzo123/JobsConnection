@@ -1,9 +1,10 @@
+import Header from "@/components/Header/Index";
+import LandingPage from "@/components/LandingPage/Index";
+
 export default function Home() {
-  return (
-    <div>
-      <h1 className="text-3xl font-bold text-black">
-        Jobs Connection
-      </h1>
-    </div>
-  )
+    return (
+        <div>
+            <LandingPage/>
+        </div>
+    )
 }
