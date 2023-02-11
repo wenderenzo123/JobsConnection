@@ -61,7 +61,7 @@ export default function LandingPage() {
                        <p className="cel:text-lg">
                             Nosso objetivo é conectar os melhores estudantes das universidades brasileiras com as melhoras empresas.
                         </p>
-                        <p className="cel:text-lg"> 
+                        <p className="cel:text-lg">
                             Visamos incentivar o primeiros passos dos desenvolvedores, engenheheiros de software e arquitetos de soluções
                             que estão na universade para conseguir a sua primeira oportunidade no mercado ainda durante a graduação.
                         </p>

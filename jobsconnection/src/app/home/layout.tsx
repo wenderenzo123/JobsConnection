@@ -1,5 +1,4 @@
-import Header from "@/components/Header/Index"
-
+import Header from "@/components/Header";
 export default function RootLayout({
     children,
 }: {
