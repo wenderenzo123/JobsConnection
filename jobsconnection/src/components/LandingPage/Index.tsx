@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdBusiness } from "react-icons/io";
 export default function LandingPage() {
     return (
         <main className='relative overflow-x-hidden'>
@@ -8,7 +9,8 @@ export default function LandingPage() {
                 <section>
                     <div className="flex">
                         <div className="flex justify-between items-center bg-blue-800 font-bold text-white w-screen h-14 p-3 tab:w-[400px] text-2xl tab:h-20 tab:justify-center">
-                            <div className="flex">
+                            <div className="flex justify-center items-center">
+                                <IoMdBusiness/>
                                 Jobs Connection
                             </div>
                             <div className="visible tab:hidden">
@@ -16,17 +18,17 @@ export default function LandingPage() {
                             </div>
                         </div>
                         <div className="hidden tab:inline-block w-screen">
-                            <div className="flex justify-between items-center h-20 px-4">
+                            <div className="flex justify-between items-center h-20 px-4 text-xl font-bold">
                                 <div className=" grid grid-cols-2 gap-4">
-                                    <Link href="/login">
+                                    <Link href="/login" className="hover:text-blue-700">
                                         Inicio
                                     </Link>
-                                    <Link href="/login">
+                                    <Link href="/login" className="hover:text-blue-700">
                                         Sobre
                                     </Link>
                                 </div>
                                 <div>
-                                    <Link className="bg-blue-800 text-white font-bold py-2 px-4 rounded-md" href={"home"}>
+                                    <Link className="flex items-center px-4 py-2 border text-white bg-blue-800 rounded-md font-bold hover:bg-blue-700 focus:outline-none" href={"home"}>
                                         Entrar
                                     </Link>
                                 </div>
@@ -41,15 +43,15 @@ export default function LandingPage() {
                     <div className="flex flex-col justify-center items-center">
                         <div className="flex flex-col w-[400px] items-center px-4">
                             <h1 className="py-4 font-medium text-gray-700 text-2xl">É uma empresa e deseja contratar estudantes talentosos para desenvolver seus projetos?</h1>
-                            <button className="bg-blue-800 text-white text-xl font-medium w-72 h-14 rounded-md">
+                            <Link className="bg-blue-800 text-white text-xl font-medium w-72 h-14 rounded-md flex items-center justify-center" href={"/company-view"}>
                                 Contrate um estudante
-                            </button>
+                            </Link>
                         </div>
                         <div className="flex flex-col w-[400px] items-center px-4">
                             <h1 className="py-4 font-medium text-gray-700 text-2xl">Você quer ser contratado pelas melhores empresas do mercado de tecnologia?</h1>
-                            <button className="bg-blue-800 text-white text-xl font-medium w-72 h-14 rounded-md">
+                            <Link className="bg-blue-800 text-white text-xl font-medium w-72 h-14 rounded-md flex items-center justify-center" href={"/applicant-view"}>
                                 Candidate-se às vagas
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </section>
