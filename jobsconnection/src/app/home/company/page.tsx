@@ -2,7 +2,6 @@
 import CardVacancy from "@/components/CardVacancy";
 import { useState } from "react";
 import { BsPlusLg } from "react-icons/bs";
-import { HiOutlineMail } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 
 export default function HomeCompany() {
