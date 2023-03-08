@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { HiOutlineMail } from "react-icons/hi";
 import { IoMdBusiness } from "react-icons/io";
+import { BiLockAlt } from "react-icons/bi";
 
 export default function LoginPage() {
   return (
@@ -28,18 +30,31 @@ export default function LoginPage() {
         </div>
       </div>
       <form className="flex flex-col justify-center items-center h-[550px]">
+        <span
+          className="font-bold text-4xl text-gray-700 py-6"
+        >Login</span>
         <div className='w-96 py-2 px-6 tab:px-0'>
           <label className='font-bold'>Email</label>
-          <input className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="email" placeholder="Email" />
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 flex items-center px-2 text-gray-500">
+              <HiOutlineMail/>
+            </div>
+            <input className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 pl-8" type="email" placeholder="Email" />
+          </div>
         </div>
         <div className='w-96 py-2 px-6 tab:px-0'>
-          <label className='font-bold'>Senha</label>
-          <input className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="password" placeholder="**********" />
+        <label className='font-bold'>Senha</label>
+          <div className="relative">
+            <div className="absolute inset-y-0 left-0 flex items-center px-2 text-gray-500">
+              <BiLockAlt/>
+            </div>
+            <input className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 pl-8" type="email" placeholder="Senha" />
+          </div>
         </div>
-        <div className='py-6'>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-56">
+        <div className='py-10'>
+          <Link className="bg-blue-500 hover:bg-blue-700 text-white py-4 px-28 rounded" href={"home/company/perfil"}>
             Entrar
-          </button>
+          </Link>
         </div>
       </form>
     </div>

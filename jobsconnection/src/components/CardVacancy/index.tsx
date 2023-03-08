@@ -27,10 +27,7 @@ export default function CardVacancy() {
                 <span className="text-sm overflow-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nullam auctor, nisl nec ultricies lacinia, nunc nisl ultricies nunc, nec
                     ultricies lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                    auctor, nisl nec ultricies lacinia, nunc nisl ultricies nunc, nec ultricies
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor,
-                    nisl nec ultricies lacinia, nunc nisl ultricies nunc, nec ultricies lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl nec
+                    auctor, nisl nec ultricies lacinia. Nullam auctor, nisl nec
                 </span>
             </div>
             {/*Contatos*/}
