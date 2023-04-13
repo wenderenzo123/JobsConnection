@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { IoIosArrowDown, IoMdBusiness, } from "react-icons/io";
+import { IoIosArrowDown, IoMdBusiness, IoMdSearch } from "react-icons/io";
 import { HiUserCircle } from "react-icons/hi";
 import { useState } from "react";
 
@@ -21,20 +21,29 @@ export default function Header() {
                 </div>
                 <div className="hidden tab:inline-block w-full">
                     <div className="flex justify-between items-center h-20 px-4">
-                        <div className="grid grid-cols-2 gap-4 text-xl">
-                            <Link href={""} className="hover:text-blue-700">
-                                Inicio
+                        <div className=" grid grid-cols-2 gap-10 text-xl">
+                            <Link href={""} className="hover:text-blue-700 font-medium">
+                                Home
                             </Link>
-                            <Link href={""} className="hover:text-blue-700">
-                                Vagas
+                            <Link href={""} className="hover:text-blue-700 font-medium">
+                                Perfil
                             </Link>
                         </div>
-                        <div className="flex justify-center items-center">
-                            <div className="relative">
+                        <div className="flex justify-end items-center bg-indigo w-full">
+
+                            <div className="flex items-center justify-between h-10 w-[25rem] border-indigo-500 border-2 p-2 mr-4 rounded">
+                              <input type="text" />
+
+                              <button>
+                                <IoMdSearch size={25} />
+                              </button>
+                            </div>
+
+                            <div className="relative mr-2">
                                 <button
                                     className="flex items-center px-4 py-2 border text-white bg-blue-700 rounded-md font-bold hover:bg-blue-800 focus:outline-none"
                                     onClick={() => setIsOpen(!isOpen)}>
-                                    <span className="mr-2">National Project</span>
+                                    <span className="mr-2">Wender Enzo</span>
                                     <div>
                                         <IoIosArrowDown />
                                     </div>
@@ -45,7 +54,7 @@ export default function Header() {
                                             href={""}
                                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-700"
                                         >
-                                            Configurações
+                                            Meus dados
                                         </Link>
                                         <Link
                                             href={""}
