@@ -1,10 +1,43 @@
+"use client"
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoMdBusiness } from "react-icons/io";
 import { BiLockAlt } from "react-icons/bi";
+import { useState } from "react";
 
 export default function LoginPage() {
+  
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch('https://connections-jobs-api-production.up.railway.app/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data); 
+
+        // router.push('/home/company/perfil');
+      } else {
+        console.log('Erro no login'); 
+      }
+
+      // router.push('/home/company/perfil');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div className="h-screen">
       <div className="flex font-semibold text-gray-700 h-20">
@@ -29,32 +62,42 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <form className="flex flex-col justify-center items-center h-[550px]">
-        <span
-          className="font-bold text-4xl text-gray-700 py-6"
-        >Login</span>
+      <form className="flex flex-col justify-center items-center h-[550px]" onSubmit={handleLogin}>
+        <span className="font-bold text-4xl text-gray-700 py-6">Login</span>
         <div className='w-96 py-2 px-6 tab:px-0'>
           <label className='font-bold'>Email</label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center px-2 text-gray-500">
-              <HiOutlineMail/>
+              <HiOutlineMail />
             </div>
-            <input className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 pl-8" type="email" placeholder="Email" />
-          </div>
+            <input
+            className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 pl-8"
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+            </div>
         </div>
         <div className='w-96 py-2 px-6 tab:px-0'>
-        <label className='font-bold'>Senha</label>
+          <label className='font-bold'>Senha</label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 flex items-center px-2 text-gray-500">
-              <BiLockAlt/>
+              <BiLockAlt />
             </div>
-            <input className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 pl-8" type="email" placeholder="Senha" />
+            <input
+            className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 pl-8"
+            type="password"
+            placeholder="Senha"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           </div>
         </div>
         <div className='py-10'>
-          <Link className="bg-blue-500 hover:bg-blue-700 text-white py-4 px-28 rounded" href={"home/company/perfil"}>
+          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white py-4 px-28 rounded">
             Entrar
-          </Link>
+          </button>
         </div>
       </form>
     </div>
