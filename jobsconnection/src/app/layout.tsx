@@ -1,3 +1,4 @@
+import { CreateContextProviderCompany } from '@/contexts/register_company';
 import './globals.css';
 
 export default function RootLayout({
@@ -10,7 +11,9 @@ export default function RootLayout({
             <head />
             <body>
                 <div>
-                    {children}
+                    <CreateContextProviderCompany>
+                        {children}
+                    </CreateContextProviderCompany>
                 </div>
             </body>
         </html>
