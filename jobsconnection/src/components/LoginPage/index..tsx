@@ -5,13 +5,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoMdBusiness } from "react-icons/io";
 import { BiLockAlt } from "react-icons/bi";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
+
+// const router = useRouter();
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
-  // const router = useRouter();
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
@@ -35,10 +35,9 @@ const LoginPage = () => {
       if (response.ok) {
         console.log("Login realizado com sucesso");
         debugger;
-        // pegar o token da resposta
         const token = await response.headers.get("Authorization");
         console.log(token);
-        // router.push("/home/company/perfil");
+        // router.push("/home/");
       } else {
         console.log("Erro no login");
       }

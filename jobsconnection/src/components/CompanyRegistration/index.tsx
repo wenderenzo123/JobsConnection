@@ -3,7 +3,7 @@
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { FaHashtag } from 'react-icons/fa'
 import Image from 'next/image'
-import { useRegisterCompany } from '@/contexts/register_company'
+import { FormDataCompany, useRegisterCompany } from '@/contexts/register_company'
 import { api } from '@/app/service/api';
 
 export default function CompanyRegistration() {
