@@ -1,29 +1,49 @@
 'use client';
+import { useRouter } from 'next/navigation';
 
-import { MdKeyboardArrowDown } from 'react-icons/md'
-import { FaHashtag } from 'react-icons/fa'
 import Image from 'next/image'
 import { FormDataCompany, useRegisterCompany } from '@/contexts/register_company'
 import { api } from '@/app/service/api';
 
 export default function CompanyRegistration() {
     const { register, handleSubmit } = useRegisterCompany(); 
+    const { push } = useRouter(); 
 
     async function handleRegisterCompany(data: FormDataCompany) {
         
         try {
             const response = await api.post('/company', {
-
+                corporate_name: data.corporate_name,
+                fantasy_name: data.fantasy_name,
+                registration_number: data.registration_number,
+                category: data.category,
+                email: data.email,
+                phone: data.phone,
+                logo: data.logo,
+                password: data.password,
+                passwordConfirmation: data.passwordConfirmation,
+                address: {
+                    address_line_one: data.address.address_line_one,
+                    address_line_two: data.address.address_line_two,
+                    city: data.address.city,
+                    province: data.address.province,
+                }
             });
+
+            if(response.status == 201) {
+                push('/company-view/success_register');
+            }
+
+            throw new Error('Register was not made successfully');            
         } catch (error) {
-            
+            console.log('error', error);
         }
     }
 
     return (
         <div className="grid grid-cols-1 h-screen tab:grid-cols-2">
             <div>
-                <form onSubmit={handleSubmit((data) => console.log(data))} className="flex flex-col justify-center items-center w-full h-full">
+                <form onSubmit={handleSubmit((data) => handleRegisterCompany(data))} className="flex flex-col justify-center items-center w-full h-full">
                     <div className='w-96 py-2 px-6 tab:px-0'>
                         <label className='font-bold'>Nome da empresa</label>
                         <input {...register('corporate_name')} className="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" type="text" placeholder="Razão social"/>
