@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { HiOutlineMail } from "react-icons/hi";
 import { IoMdBusiness } from "react-icons/io";
 import { BiLockAlt } from "react-icons/bi";
-import { Router, useRouter } from "next/router";
+import { useRouter } from 'next/navigation';
 
 // const router = useRouter();
 
