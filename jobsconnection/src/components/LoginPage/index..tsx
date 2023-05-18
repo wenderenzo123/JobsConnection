@@ -13,6 +13,8 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { push } = useRouter();
+
   const handleLogin = async (e: any) => {
     e.preventDefault();
     const url = "https://connections-jobs-api-production.up.railway.app/api/login";
@@ -33,11 +35,9 @@ const LoginPage = () => {
       });
 
       if (response.ok) {
-        console.log("Login realizado com sucesso");
-        debugger;
-        const token = await response.headers.get("Authorization");
+        const token = response.headers.get("Authorization");
         console.log(token);
-        // router.push("/home/");
+        push("/home/applicant/home");
       } else {
         console.log("Erro no login");
       }
